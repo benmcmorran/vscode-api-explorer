@@ -1,0 +1,63 @@
+{
+  "name": "vscode-api-explorer",
+  "version": "0.1.0",
+  "publisher": "benmcmorran",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "displayName": "VS Code API Explorer",
+  "description": "Explore the VS Code API interactively in the terminal.",
+  "categories": [
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#F3F3F3",
+    "theme": "light"
+  },
+  "icon": "resources/icon.png",
+  "qna": "https://github.com/benmcmorran/vscode-api-explorer/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benmcmorran/vscode-api-explorer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benmcmorran/vscode-api-explorer/issues"
+  },
+  "homepage": "https://github.com/benmcmorran/vscode-api-explorer",
+  "main": "./out/extension.js",
+  "contributes": {
+    "terminal": {
+      "profiles": [
+        {
+          "icon": "$(code)",
+          "id": "vscode-api-explorer.terminal",
+          "title": "VS Code API Explorer"
+        }
+      ]
+    }
+  },
+  "activationEvents": [
+    "onTerminalProfile:vscode-api-explorer.terminal"
+  ],
+  "devDependencies": {
+    "@rushstack/eslint-config": "^3.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "eslint": "^7.27.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.3.2"
+  },
+  "extensionKind": [
+    "workspace",
+    "ui"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run format:check && npm run lint && npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  }
+}

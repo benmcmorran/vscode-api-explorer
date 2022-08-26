@@ -1,0 +1,9 @@
+*
+*/**
+
+!CHANGELOG.md
+!LICENSE.md
+!out/extension.js
+!package.json
+!README.md
+!resources/icon.png
